@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="documentoExcel" class="edu.cibertec.repository.impl.DocumentoExcel"/>
+    <bean id="documentoTexto" class="edu.cibertec.repository.impl.DocumentoTexto"/>
+
+    <!-- Inyeccion por propiedad -->
+    <bean id="impresoraServicePorPropiedad" class="edu.cibertec.service.ImpresoraServicePorPropiedad">
+        <property name="documento" ref="documentoTexto"/>
+    </bean>
+    <!-- Inyeccion por constructor -->
+    <bean id="impresoraServicePorConstructor" class="edu.cibertec.service.ImpresoraServicePorConstructor">
+        <constructor-arg ref="documentoExcel"/>
+    </bean>
+    <!-- Inyeccion por metodo -->
+    <bean id="miDependencia" class="edu.cibertec.entity.MiDependencia"/>
+    <bean id="miClase" class="edu.cibertec.service.MiClase">
+        <lookup-method name="instanciaMiDependencia" bean="miDependencia"/>
+    </bean>
+</beans>

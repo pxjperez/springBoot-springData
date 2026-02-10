@@ -1,0 +1,8 @@
+edu\cibertec\controller\MainController.class
+edu\cibertec\repository\impl\DocumentoExcel.class
+edu\cibertec\service\ImpresoraServicePorConstructor.class
+edu\cibertec\entity\HolaMundoEntity.class
+edu\cibertec\repository\impl\DocumentoTexto.class
+edu\cibertec\service\ImpresoraServicePorPropiedad.class
+edu\cibertec\config\AppConfig.class
+edu\cibertec\repository\Documento.class
